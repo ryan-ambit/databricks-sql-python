@@ -21,7 +21,7 @@ from uuid import UUID
 # By convention, backend-specific SQLA types are defined in uppercase
 # This dialect exposes Databricks SQL's TIMESTAMP and TINYINT types
 # as these are not covered by the generic, camelcase types shown below
-from databricks.sqlalchemy import TIMESTAMP, TINYINT
+from databricks_sql.sqlalchemy import TIMESTAMP, TINYINT
 
 # Beside the CamelCase types shown below, line comments reflect
 # the underlying Databricks SQL / Delta table type

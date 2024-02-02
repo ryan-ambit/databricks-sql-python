@@ -35,7 +35,7 @@ export DATABRICKS_TOKEN=dapi********************************
 Example usage:
 ```python
 import os
-from databricks import sql
+from databricks_sql import sql
 
 host = os.getenv("DATABRICKS_HOST")
 http_path = os.getenv("DATABRICKS_HTTP_PATH")

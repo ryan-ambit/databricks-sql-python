@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch, MagicMock
 
-import databricks.sql.cloudfetch.download_manager as download_manager
-import databricks.sql.cloudfetch.downloader as downloader
-from databricks.sql.thrift_api.TCLIService.ttypes import TSparkArrowResultLink
+import databricks_sql.sql.cloudfetch.download_manager as download_manager
+import databricks_sql.sql.cloudfetch.downloader as downloader
+from databricks_sql.sql.thrift_api.TCLIService.ttypes import TSparkArrowResultLink
 
 
 class DownloadManagerTests(unittest.TestCase):

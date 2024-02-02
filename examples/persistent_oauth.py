@@ -16,8 +16,8 @@ For this example, the DevOnlyFilePersistence class is provided. Do not use this 
 import os
 from typing import Optional
 
-from databricks import sql
-from databricks.sql.experimental.oauth_persistence import OAuthPersistence, OAuthToken, DevOnlyFilePersistence
+from databricks_sql import sql
+from databricks_sql.sql.experimental.oauth_persistence import OAuthPersistence, OAuthToken, DevOnlyFilePersistence
 
 
 class SampleOAuthPersistence(OAuthPersistence):

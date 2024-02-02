@@ -2,8 +2,8 @@ import os
 import tempfile
 
 import pytest
-import databricks.sql as sql
-from databricks.sql import Error
+import databricks_sql.sql as sql
+from databricks_sql.sql import Error
 
 @pytest.fixture(scope="module", autouse=True)
 def check_staging_ingestion_user():

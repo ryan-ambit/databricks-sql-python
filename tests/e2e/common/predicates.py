@@ -8,23 +8,23 @@ ENDPOINT_TEST_KEY = "is_endpoint_test"
 
 
 def pysql_supports_arrow():
-    """Import databricks.sql and test whether Cursor has fetchall_arrow."""
-    from databricks.sql.client import Cursor
+    """import databricks_sql.sql and test whether Cursor has fetchall_arrow."""
+    from databricks_sql.sql.client import Cursor
     return hasattr(Cursor, 'fetchall_arrow')
 
 
 def pysql_has_version(compare, version):
-    """Import databricks.sql, and return compare_module_version(...).
+    """import databricks_sql.sql, and return compare_module_version(...).
 
     Expected use:
         from common.predicates import pysql_has_version
-        from databricks import sql as pysql
+        from databricks_sql import sql as pysql
         ...
         @unittest.skipIf(pysql_has_version('<', '2'))
         def test_some_pyhive_v1_stuff():
             ...
     """
-    from databricks import sql
+    from databricks_sql import sql
     return compare_module_version(sql, compare, version)
 
 

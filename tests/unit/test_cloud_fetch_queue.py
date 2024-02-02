@@ -2,8 +2,8 @@ import pyarrow
 import unittest
 from unittest.mock import MagicMock, patch
 
-from databricks.sql.thrift_api.TCLIService.ttypes import TSparkArrowResultLink
-import databricks.sql.utils as utils
+from databricks_sql.sql.thrift_api.TCLIService.ttypes import TSparkArrowResultLink
+import databricks_sql.sql.utils as utils
 
 
 class CloudFetchQueueSuite(unittest.TestCase):

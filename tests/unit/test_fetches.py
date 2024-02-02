@@ -3,8 +3,8 @@ from unittest.mock import Mock
 
 import pyarrow as pa
 
-import databricks.sql.client as client
-from databricks.sql.utils import ExecuteResponse, ArrowQueue
+import databricks_sql.sql.client as client
+from databricks_sql.sql.utils import ExecuteResponse, ArrowQueue
 
 
 class FetchTests(unittest.TestCase):

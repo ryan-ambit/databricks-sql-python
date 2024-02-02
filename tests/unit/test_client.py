@@ -7,16 +7,16 @@ import itertools
 from decimal import Decimal
 from datetime import datetime, date
 
-from databricks.sql.thrift_api.TCLIService.ttypes import (
+from databricks_sql.sql.thrift_api.TCLIService.ttypes import (
     TOpenSessionResp,
     TExecuteStatementResp,
 )
-from databricks.sql.thrift_backend import ThriftBackend
+from databricks_sql.sql.thrift_backend import ThriftBackend
 
-import databricks.sql
-import databricks.sql.client as client
-from databricks.sql import InterfaceError, DatabaseError, Error, NotSupportedError
-from databricks.sql.types import Row
+import databricks_sql.sql
+import databricks_sql.sql.client as client
+from databricks_sql.sql import InterfaceError, DatabaseError, Error, NotSupportedError
+from databricks_sql.sql.types import Row
 
 from tests.unit.test_fetches import FetchTests
 from tests.unit.test_thrift_backend import ThriftBackendTestSuite

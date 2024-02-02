@@ -6,8 +6,8 @@ from typing import Type
 import pytest
 import pytz
 
-from databricks.sql.client import Connection
-from databricks.sql.parameters import (
+from databricks_sql.sql.client import Connection
+from databricks_sql.sql.parameters import (
     BigIntegerParameter,
     BooleanParameter,
     DateParameter,
@@ -22,13 +22,13 @@ from databricks.sql.parameters import (
     TinyIntParameter,
     VoidParameter,
 )
-from databricks.sql.parameters.native import (
+from databricks_sql.sql.parameters.native import (
     TDbsqlParameter,
     TSparkParameterValue,
     dbsql_parameter_from_primitive,
 )
-from databricks.sql.thrift_api.TCLIService import ttypes
-from databricks.sql.thrift_api.TCLIService.ttypes import (
+from databricks_sql.sql.thrift_api.TCLIService import ttypes
+from databricks_sql.sql.thrift_api.TCLIService.ttypes import (
     TOpenSessionResp,
     TSessionHandle,
     TSparkParameterValue,

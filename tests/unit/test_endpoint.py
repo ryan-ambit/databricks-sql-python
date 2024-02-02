@@ -4,7 +4,7 @@ import pytest
 
 from unittest.mock import patch
 
-from databricks.sql.auth.endpoint import infer_cloud_from_host, CloudType, get_oauth_endpoints, \
+from databricks_sql.sql.auth.endpoint import infer_cloud_from_host, CloudType, get_oauth_endpoints, \
     AzureOAuthEndpointCollection
 
 aws_host = "foo-bar.cloud.databricks.com"

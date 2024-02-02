@@ -1,4 +1,4 @@
-from databricks import sql
+from databricks_sql import sql
 import os
 
 # Users of connector versions >= 2.9.0 and <= 3.0.0 can use the v3 retry behaviour by setting _enable_v3_retries=True

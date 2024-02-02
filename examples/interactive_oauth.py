@@ -1,4 +1,4 @@
-from databricks import sql
+from databricks_sql import sql
 import os
 
 """databricks-sql-connector supports user to machine OAuth login which means the

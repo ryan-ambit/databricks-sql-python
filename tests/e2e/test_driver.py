@@ -18,8 +18,8 @@ import thrift
 import pytest
 from urllib3.connectionpool import ReadTimeoutError
 
-import databricks.sql as sql
-from databricks.sql import STRING, BINARY, NUMBER, DATETIME, DATE, DatabaseError, Error, OperationalError, RequestError
+import databricks_sql.sql as sql
+from databricks_sql.sql import STRING, BINARY, NUMBER, DATETIME, DATE, DatabaseError, Error, OperationalError, RequestError
 from tests.e2e.common.predicates import pysql_has_version, pysql_supports_arrow, compare_dbr_versions, is_thrift_v5_plus
 from tests.e2e.common.core_tests import CoreTestMixin, SmokeTestMixin
 from tests.e2e.common.large_queries_mixin import LargeQueriesMixin
@@ -31,7 +31,7 @@ from tests.e2e.common.retry_test_mixins import PySQLRetryTestsMixin
 
 from tests.e2e.common.uc_volume_tests import PySQLUCVolumeTestSuiteMixin
 
-from databricks.sql.exc import SessionAlreadyClosedError
+from databricks_sql.sql.exc import SessionAlreadyClosedError
 
 log = logging.getLogger(__name__)
 
@@ -684,7 +684,7 @@ class PySQLCoreTestSuite(SmokeTestMixin, CoreTestMixin, DecimalTestsMixin, Times
 
     def test_close_connection_closes_cursors(self):
 
-        from databricks.sql.thrift_api.TCLIService import ttypes
+        from databricks_sql.sql.thrift_api.TCLIService import ttypes
 
         with self.connection() as conn:
             cursor = conn.cursor()

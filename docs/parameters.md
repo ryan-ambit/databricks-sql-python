@@ -52,7 +52,7 @@ When your SQL query uses `named` paramstyle variable markers, you need specify a
 Generally, you do this by passing `parameters` as a dictionary whose keys match the variables in your query. The length of the dictionary must exactly match the count of variable markers or an exception will be raised.
 
 ```python
-from databricks import sql
+from databricks_sql import sql
 
 with sql.connect(...) as conn:
     with conn.cursor() as cursor():
@@ -70,7 +70,7 @@ When your SQL query uses `qmark` paramstyle variable markers, you only need to s
 You do this by passing `parameters` as a list. The order of values in the list corresponds to the order of `qmark` variables in your query. The length of the list must exactly match the count of variable markers in your query or an exception will be raised.
 
 ```python
-from databricks import sql
+from databricks_sql import sql
 
 with sql.connect(...) as conn:
     with conn.cursor() as cursor():
@@ -111,8 +111,8 @@ Automatic inferrence is sufficient for most usages. But you can bypass the infer
 `TDbsqlParameter` objects must always be passed within a list. Either paramstyle (`:named` or `?`) may be used. However, if your query uses the `named` paramstyle, all `TDbsqlParameter` objects must be provided a `name` when they are constructed.
 
 ```python
-from databricks import sql
-from databricks.sql.parameters import StringParameter, IntegerParameter
+from databricks_sql import sql
+from databricks_sql.sql.parameters import StringParameter, IntegerParameter
 
 # with `named` markers
 with sql.connect(...) as conn:
@@ -179,7 +179,7 @@ This connector follows the [PEP-249 interface](https://peps.python.org/pep-0249/
 Parameters must be passed as a dictionary.
 
 ```python
-from databricks import sql
+from databricks_sql import sql
 
 with sql.connect(..., use_inline_params=True) as conn:
     with conn.cursor() as cursor():
@@ -199,7 +199,7 @@ SELECT field FROM table WHERE field = 'foo' AND another_field = 20
 Parameters must be passed as a list.
 
 ```python
-from databricks import sql
+from databricks_sql import sql
 
 with sql.connect(..., use_inline_params=True) as conn:
     with conn.cursor() as cursor():
@@ -219,7 +219,7 @@ The result of the above two examples is identical.
 Parameter values can also be passed as a sequence. This is typically used when writing `WHERE ... IN` clauses:
 
 ```python
-from databricks import sql
+from databricks_sql import sql
 
 with sql.connect(..., use_inline_params=True) as conn:
     with conn.cursor() as cursor():

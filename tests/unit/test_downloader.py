@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock, patch, MagicMock
 
-import databricks.sql.cloudfetch.downloader as downloader
+import databricks_sql.sql.cloudfetch.downloader as downloader
 
 
 class DownloaderTests(unittest.TestCase):

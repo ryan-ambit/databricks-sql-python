@@ -7,12 +7,12 @@ from ssl import CERT_NONE, CERT_REQUIRED
 
 import pyarrow
 
-import databricks.sql
-from databricks.sql import utils
-from databricks.sql.thrift_api.TCLIService import ttypes
-from databricks.sql import *
-from databricks.sql.auth.authenticators import AuthProvider
-from databricks.sql.thrift_backend import ThriftBackend
+import databricks_sql.sql
+from databricks_sql.sql import utils
+from databricks_sql.sql.thrift_api.TCLIService import ttypes
+from databricks_sql.sql import *
+from databricks_sql.sql.auth.authenticators import AuthProvider
+from databricks_sql.sql.thrift_backend import ThriftBackend
 
 
 def retry_policy_factory():
@@ -146,7 +146,7 @@ class ThriftBackendTestSuite(unittest.TestCase):
 
     def test_proxy_headers_are_set(self):
 
-        from databricks.sql.auth.thrift_http_client import THttpClient
+        from databricks_sql.sql.auth.thrift_http_client import THttpClient
         from urllib.parse import urlparse
 
         fake_proxy_spec = "https://someuser:somepassword@8.8.8.8:12340"
@@ -1063,9 +1063,9 @@ class ThriftBackendTestSuite(unittest.TestCase):
             self, mock_retry_policy, mock_GetOperationStatus, t_transport_class):
 
         import thrift, errno
-        from databricks.sql.thrift_api.TCLIService.TCLIService import Client
-        from databricks.sql.exc import RequestError
-        from databricks.sql.utils import NoRetryReason
+        from databricks_sql.sql.thrift_api.TCLIService.TCLIService import Client
+        from databricks_sql.sql.exc import RequestError
+        from databricks_sql.sql.utils import NoRetryReason
 
         this_gos_name = "GetOperationStatus"
         mock_GetOperationStatus.__name__ = this_gos_name
@@ -1121,10 +1121,10 @@ class ThriftBackendTestSuite(unittest.TestCase):
         mock_gos.side_effect = urllib3.exceptions.HTTPError("Read timed out")
 
         import thrift, errno
-        from databricks.sql.thrift_api.TCLIService.TCLIService import Client
-        from databricks.sql.exc import RequestError
-        from databricks.sql.utils import NoRetryReason
-        from databricks.sql.auth.thrift_http_client import THttpClient
+        from databricks_sql.sql.thrift_api.TCLIService.TCLIService import Client
+        from databricks_sql.sql.exc import RequestError
+        from databricks_sql.sql.utils import NoRetryReason
+        from databricks_sql.sql.auth.thrift_http_client import THttpClient
 
         this_gos_name = "GetOperationStatus"
         mock_gos.__name__ = this_gos_name
